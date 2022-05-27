@@ -1,8 +1,7 @@
 import os
 import sys
 from pathlib import Path
-from PyQt5 import QtWidgets, uic
-from PyQt5.QtWidgets import QLabel, QLineEdit, QPushButton, QMessageBox, QWidget, QDialog
+
 
 
 # SUBDIR = {
@@ -11,8 +10,10 @@ from PyQt5.QtWidgets import QLabel, QLineEdit, QPushButton, QMessageBox, QWidget
 #     "IMAGES": [".jpg", ".jpeg", ".png", ".gif"],
 #     "DataFile": [".csv", ".xlsx",".xls"]
 # }
+from PyQt5 import uic
 
-class MyFirstWin(QDialog):
+
+class MyFirstWin():
     def __init__(self):
         super(MyFirstWin,self).__init__()
         uic.loadUi('myfirstwin.ui',self)
