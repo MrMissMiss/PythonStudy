@@ -18,7 +18,8 @@ def getFiles(path):
 def runxsh(file_name):
     xshfile_path = "C:\\Users\\cai\\Documents\\NetSarang Computer\\7\\Xshell\\Sessions"
     xshfile_name = "\\" + file_name
-    logfile_path = "E:\\python项目\\xshell脚本\\venv\\XshellLog"
+    # E:\python项目\PythonStudy\xshell脚本\venv\XshellLog
+    logfile_path = "E:\\python项目\\PythonStudy\\xshell脚本\\venv\\XshellLog"
     logfile_name = "\\" + file_name
 
     # 连接服务器
