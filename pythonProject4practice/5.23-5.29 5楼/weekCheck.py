@@ -1,7 +1,12 @@
+import datetime
 import os
 import pandas as pd
 import xlrd
 import docxtpl
+import xlwt
+
+StartRow = 16
+
 
 if __name__ == '__main__':
     # 当前文件路径
@@ -42,8 +47,20 @@ if __name__ == '__main__':
     print(context)
     print(len(context))
 
+    # 打开要写入的excel
+    excel = xlrd.open_workbook(os.path.join(proDir,"5.23-5.29财务经营数据稽核报告.xlsx"))
+    # 打开sheet页
+    worksheet = excel.sheet_by_index(0)
+
+    # 获取当前 月 和 日
+    checkMonth = datetime.datetime.today().strftime("%m")
+    checkDay = datetime.datetime.today().strftime("%d")
     for shop_dict in context:
+        i = 0
         print(shop_dict['铺位号'])
         print(shop_dict['品牌'])
         print(shop_dict['小计销售'])
 
+        worksheet.write(StartRow+i,0,shop_dict['铺位号'])
+        worksheet.write(StartRow+i,1,shop_dict['品牌'])
+        worksheet.write(StartRow+i,)
