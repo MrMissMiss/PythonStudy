@@ -2,6 +2,8 @@
 
 # 按 Shift+F10 执行或将其替换为您的代码。
 # 按 双击 Shift 在所有地方搜索类、文件、工具窗口、操作和设置。
+import random
+
 import jionlp
 
 
@@ -17,6 +19,12 @@ def sp_address(addr):
 
 # 按间距中的绿色按钮以运行脚本。
 if __name__ == '__main__':
+
+    for i in range(10000):
+        x = random.random()
+        print(format(x, '.4f'))
+
+
     print_hi('PyCharm')
     raw_addr = "浙江省温州市苍南县灵溪镇灵堡村灵堡小区"
     sp_addr = sp_address(raw_addr)

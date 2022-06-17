@@ -6,7 +6,7 @@ host = "127.0.0.1"
 username = 'sa'
 pwd = 'Tingche.easy'
 db = 'Tingche.easyDB'
-port = 3333
+port = 433
 charset = 'utf8'
 xls_name = 'test.xlsx'
 
@@ -16,4 +16,3 @@ def conn2SQL():
     sql_1 = '''select * from table where
     '''
     data = pd.read_sql(sql_1,conn)
-    xlsx =

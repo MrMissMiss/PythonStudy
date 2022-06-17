@@ -1,10 +1,11 @@
 import os
+import struct
 
 import xlwt
 import xlrd
 
 # 导入文件
-def get_file():
+def get_files():
     """
     用于获取文件名
     :return: 返回值为文件名组成的列表
@@ -40,3 +41,24 @@ def load_data(file_list):
 
 def data2xls():
     pass
+
+
+if __name__ == '__main__':
+    files = get_files()
+    print(files)
+    try:
+        for file in files:
+            if 'xlsx' in file:
+                with open(file, 'rb') as f:
+                    byte = f.read(100)
+                    print(byte)
+                byte_list = struct.unpack('B'*100, byte)
+                print(byte_list)
+                code = ''.join([('%X' % each).zfill(2) for each in byte_list])
+                print(code)
+    except Exception as e:
+        print(e)
+
+
+
+
