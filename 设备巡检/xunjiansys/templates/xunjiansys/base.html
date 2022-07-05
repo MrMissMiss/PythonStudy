@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 {% load bootstrap3 %}
-<html lang="cn">
+<html lang="zh-cn">
   <head>
       <meta charset="utf-8">
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -23,6 +23,7 @@
             <div id="navbar" class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a href="{% url 'xunjiansys:equipments' %}">巡检设备</a></li>
+                    <li><a href="{% url 'xunjiansys:equipments' %}">巡检记录</a></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     {% if user.is_authenticated %}

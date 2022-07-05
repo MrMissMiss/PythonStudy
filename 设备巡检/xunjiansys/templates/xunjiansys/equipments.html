@@ -1,0 +1,25 @@
+{% extends 'xunjiansys/base.html' %}
+
+{% load bootstrap3 %}
+
+{% block header %}
+  <h2>设备清单</h2>
+{% endblock header %}
+
+{% block content %}
+
+  <h3><a href="{% url 'xunjiansys:add_equipment' %}">添加设备</a></h3>
+
+  <ul>
+    {% for equipment in equipments %}
+      <li>
+        <h3>
+          <a href="{% url 'xunjiansys:equipment_detail' equipment.no %}">{{ equipment }}</a>
+        </h3>
+      </li>
+    {% empty %}
+      <li>尚未添加设备</li>
+    {% endfor %}
+  </ul>
+
+{% endblock content %}

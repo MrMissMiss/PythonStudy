@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     
     # 我的应用
     'xunjiansys',
+    'users',
 ]
 
 MIDDLEWARE = [
@@ -109,13 +110,13 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/4.0/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'zh-hans'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'GMT'
 
 USE_I18N = True
 
-USE_TZ = True
+USE_TZ = False
 
 
 # Static files (CSS, JavaScript, Images)
@@ -128,7 +129,14 @@ STATIC_URL = 'static/'
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# 我的设置
+LOGIN_URL = 'users/login'
+
 # django-bootstrap3的设置
 BOOTSTRAP3 = {
     'include_jquery': True,
 }
+
+ALLOWED_HOSTS = [
+    '10.129.30.42',
+]
