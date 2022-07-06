@@ -139,4 +139,6 @@ BOOTSTRAP3 = {
 
 ALLOWED_HOSTS = [
     '10.129.30.42',
+    'yun.xmaojun.cn',
+    '183.246.75.182',
 ]

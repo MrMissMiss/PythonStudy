@@ -28,6 +28,7 @@ def equipment_detail(request, equipment_no):
     equipment = Equipment.objects.get(no=equipment_no)
     records = Record.objects.get(equipment=equipment)
     context = {'equipment': equipment, 'records': records}
+
     return render(request, 'xunjiansys/equipment_detail.html', context)
 
 
@@ -47,11 +48,11 @@ def add_equipment(request):
     return render(request, 'xunjiansys/add_equipment.html', context)
 
 
-def records(request, equipment_no):
+def records(request):
     """显示某设备的巡检记录"""
-    equipment = Equipment.objects.get(no=equipment_no)
-    records = Record.objects.get(equipment=equipment)
-
+    records = Record.objects.order_by('date_create')
+    context = {'records': records}
+    return render(request, 'xunjiansys/records.html', context)
 
 
 def add_record(request, equipment_no):

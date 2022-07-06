@@ -19,4 +19,7 @@ urlpatterns = [
     # 添加新巡检记录
     path(r'add_record/', views.add_record, name='add_record'),
 
+    # 巡检记录清单
+    path(r'records/', views.records, name='records'),
+
 ]

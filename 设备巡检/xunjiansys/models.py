@@ -6,7 +6,7 @@ from django.db.models.functions import TruncTime, TruncSecond
 # Create your models here.
 class Location_type(models.Model):
     """位置类型"""
-    lt_name = models.CharField(max_length=100, verbose_name='位置类型', )
+    lt_name = models.CharField(max_length=100, verbose_name='位置类型')
 
     def __str__(self):
         """返回字符串类型"""

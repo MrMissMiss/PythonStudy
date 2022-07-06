@@ -1,0 +1,23 @@
+{% extends 'xunjiansys/base.html' %}
+
+{% load bootstrap3 %}
+
+{% block header %}
+  <h2>巡检记录：</h2>
+{% endblock header %}
+
+{% block content %}
+
+  <ul>
+    {% for record in records %}
+      <li>
+        <h3>
+          <a href="{% url 'xunjiansys:record' record.id %}">{{ record }}</a>
+        </h3>
+      </li>
+    {% empty %}
+      <li>尚未添加设备</li>
+    {% endfor %}
+  </ul>
+
+{% endblock content %}
